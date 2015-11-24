@@ -21,5 +21,38 @@ struct node {
 
 struct node * sortLinkedList(struct node *head)
 {
-	return NULL;
+
+	int i = 0, *arr, j = 0, size = 0, swap_temp = 0;
+	arr = (int *)malloc(sizeof(int) * 20);
+	struct node *temp = head;
+
+	if (head == NULL)
+		return NULL;
+
+	while (temp != NULL)
+	{
+		arr[i++] = temp->num;
+		temp = temp->next;
+	}
+	size = i;
+	for (i = 0; i < size; i++)
+	{
+		for (j = 0; j < size; j++)
+		{
+			if (arr[i] < arr[j])
+			{
+				swap_temp = arr[i];
+				arr[i] = arr[j];
+				arr[j] = swap_temp;
+			}
+		}
+	}
+	temp = head;
+	for (i = 0; i < size; i++)
+	{
+		temp->num = arr[i];
+		temp = temp->next;
+
+	}
+	return head;
 }
