@@ -29,8 +29,7 @@ int convert_sll_2digit_to_int(struct node *head)
 	temp->digit1 = head->digit1;
 	temp->digit2 = head->digit2;
 	temp->next = head->next;
-	//if (temp->digit1 == 0 && temp->digit2 == 0)
-	//	return 0;
+	
 	while (temp!= NULL)
 	{
 		num = num * 10 + temp->digit1;
